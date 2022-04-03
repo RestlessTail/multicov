@@ -42,6 +42,7 @@ covplot <- function(peak.file, val.col, chr, start, end,
   p = ggplot(data) + geom_rect(aes(xmin = start, xmax = end, ymin = 0, ymax = val), fill = color.bg, color = color.bg)
   p <- p + theme_classic()
   p <- p + xlab(xlab) + ylab(ylab) + ggtitle(title)
+  p <- p + scale_x_continuous(limits = c(start, end))
   if(is.null(ylim)){
     p <- p + scale_y_continuous(expand=c(0,0))
   }
